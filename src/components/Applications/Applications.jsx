@@ -18,8 +18,10 @@ class Applications extends Component {
           image: rhymeDoctor,
           title: 'Rhyme Doctor',
           url: 'https://rhymedoctor.fun/',
-          android: 'https://play.google.com/store/apps/details?id=com.notoriousnpm.rhymedoctor',
-          androidCode: 'https://github.com/Notorious-NPM/Rhyme-Doctor-Mobile'
+          special: [
+            ['Android Link', 'https://play.google.com/store/apps/details?id=com.notoriousnpm.rhymedoctor'],
+            ['Android Codebase', 'https://github.com/Notorious-NPM/Rhyme-Doctor-Mobile']
+          ]
         },
         {
           code: 'https://github.com/aask4/redidit',
@@ -34,6 +36,10 @@ class Applications extends Component {
           image: portfolio,
           title: 'Portfolio',
           url: 'https://omegak911.github.io/',
+          special: [
+            ['Heroku Website', 'https://personalportfolio-v2.herokuapp.com/'],
+            ['Next.js version Codebase', 'https://github.com/omegak911/portfolio-v2']
+          ]
         }
         // {
         //   title: 'TrackYoScore',
@@ -75,11 +81,11 @@ class Applications extends Component {
                           <div><h3>{app.title}</h3></div>
                           <div><a href={app.url} target="_blank">Website</a></div>
                           <div><a href={app.code} target="_blank">Codebase</a></div>
-                          {app.android &&
+                          {app.special &&
                             <div>
                               <br/>
-                              <div><a href={app.android} target="_blank">Android Link</a></div>
-                              <div><a href={app.androidCode} target="_blank">Android Codebase</a></div>
+                              <div><a href={app.special[0][1]} target="_blank">{app.special[0][0]}</a></div>
+                              <div><a href={app.special[1][1]} target="_blank">{app.special[1][0]}</a></div>
                             </div>
                           }
                         </div>
