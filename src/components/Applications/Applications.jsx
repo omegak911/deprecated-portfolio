@@ -4,7 +4,7 @@ import './Applications.css';
 
 const redidit = 'https://media.licdn.com/media-proxy/ext?w=800&h=800&f=n&hash=7%2Ft8PyKhFJmmc360e9k3D7AlwGs%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6jnhodx1Ey9KGTqAGj6E5DQJHUA3L0CHH05IbfPWjucZTZeeCl9UARcH0DjQAwKr61ETPnQY6-KIO7etkkgpPndZH5agYUbhl4lWdI';
 const rhymeDoctor = 'https://media.licdn.com/media-proxy/ext?w=800&h=800&f=n&hash=IPlKHIIm9lFrnbt8npUC243t14s%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6jnhodx1Ey9KGTqAGj6E5DQJHUA3L0CHH05IbfPWjhfsCLerbzrUBHcS8HjQAxKum1SGG3E464KojnKN0j2Ze3JMT5agYUbhl4lWdI';
-const trackYoScore = 'https://thumbs.dreamstime.com/b/super-cool-potato-character-cartoon-style-vector-illustration-95541644.jpg';
+// const trackYoScore = 'https://thumbs.dreamstime.com/b/super-cool-potato-character-cartoon-style-vector-illustration-95541644.jpg';
 const portfolio = 'https://media.licdn.com/media-proxy/ext?w=800&h=800&f=n&hash=k9tS0%2FpGWit6YI7LG%2FsrdzsNO08%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6jnhodx1Ey9KGTqAGj6E5DQJHUA3L0CHH05IbfPWjrfs_eKLel8UAVLnhXjQAzfO61STXhE460eIjre9V2iJHjd5P5agYUbhl4lWdI';
 
 class Applications extends Component {
@@ -41,12 +41,16 @@ class Applications extends Component {
         //   description: 'Game score tracking system',
         // },
       ],
-      showModal: false,
+      showModal: null,
     }
   }
 
-  triggerModal = (index) => {
-    this.setState({ showModal: !this.state.showModal })
+  displayModal = (index) => {
+    this.setState({ showModal: index})
+  }
+
+  removeModal = () => {
+    this.setState({ showModal: null})
   }
 
   render() {
@@ -62,28 +66,26 @@ class Applications extends Component {
                 <div key={index} className="appContainer">
                   <div 
                     className="innerAppContainer" 
-                    onMouseEnter={() => this.triggerModal(index)} 
-                    onMouseLeave={() => this.triggerModal(index)}
+                    onMouseEnter={() => this.displayModal(index)} 
+                    onMouseLeave={this.removeModal}
                     >
-                    {showModal && 
+                    {showModal === index && 
                       <div className="modal">
                         <div className="modalInfo">
-                          <div><h4>{app.title}</h4></div>
-                          <div><a href={app.url}>Website</a></div>
-                          <div><a href={app.code}>Codebase</a></div>
+                          <div><h3>{app.title}</h3></div>
+                          <div><a href={app.url} target="_blank">Website</a></div>
+                          <div><a href={app.code} target="_blank">Codebase</a></div>
                           {app.android &&
                             <div>
                               <br/>
-                              <div><a href={app.android}>Android Link</a></div>
-                              <div><a href={app.androidCode}>Android Codebase</a></div>
+                              <div><a href={app.android} target="_blank">Android Link</a></div>
+                              <div><a href={app.androidCode} target="_blank">Android Codebase</a></div>
                             </div>
                           }
                         </div>
                       </div>
                     }
                     <img src={app.image} alt="app preview"/>
-                    {/* <div>{app.title}</div>
-                    <div>{app.description}</div> */}
                   </div>
                 </div>
               )}
