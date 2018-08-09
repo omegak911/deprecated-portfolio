@@ -4,8 +4,9 @@ import './Applications.css';
 
 const redidit = 'https://media.licdn.com/media-proxy/ext?w=800&h=800&f=n&hash=7%2Ft8PyKhFJmmc360e9k3D7AlwGs%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6jnhodx1Ey9KGTqAGj6E5DQJHUA3L0CHH05IbfPWjucZTZeeCl9UARcH0DjQAwKr61ETPnQY6-KIO7etkkgpPndZH5agYUbhl4lWdI';
 const rhymeDoctor = 'https://media.licdn.com/media-proxy/ext?w=800&h=800&f=n&hash=IPlKHIIm9lFrnbt8npUC243t14s%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6jnhodx1Ey9KGTqAGj6E5DQJHUA3L0CHH05IbfPWjhfsCLerbzrUBHcS8HjQAxKum1SGG3E464KojnKN0j2Ze3JMT5agYUbhl4lWdI';
-// const trackYoScore = 'https://thumbs.dreamstime.com/b/super-cool-potato-character-cartoon-style-vector-illustration-95541644.jpg';
+const trackYoScore = 'https://media.licdn.com/media-proxy/ext?w=800&h=800&f=n&hash=qx92U8a%2B1Jf0HHV0LzE%2ByWOdCD8%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6jnhodx1Ey9KGTqAGj6E5DQJHUA3L0CHH05IbfPWi4KpaMfrqjo0BALnoGjQBheOi1ETfhRI69LILrKdly2MPjJsL5agYUbhl4lWdI';
 const portfolio = 'https://media.licdn.com/media-proxy/ext?w=800&h=800&f=n&hash=k9tS0%2FpGWit6YI7LG%2FsrdzsNO08%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6jnhodx1Ey9KGTqAGj6E5DQJHUA3L0CHH05IbfPWjrfs_eKLel8UAVLnhXjQAzfO61STXhE460eIjre9V2iJHjd5P5agYUbhl4lWdI';
+const gottaVueEmAll = 'https://media.licdn.com/media-proxy/ext?w=800&h=800&f=n&hash=w0RtPCnAA3V1E5uy7imL2ZdDTT8%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6jnhodx1Ey9KGTqAGj6E5DQJHUA3L0CHH05IbfPWjvL87afran8kBCcH8CjQBhLOq1STblRI65KonofI5x2p_tdZD5agYUbhl4lWdI';
 
 class Applications extends Component {
   constructor(props) {
@@ -31,6 +32,12 @@ class Applications extends Component {
           url: 'https://aask4-redidit.herokuapp.com',
         },
         {
+          code: 'https://github.com/omegak911/TrackYoScore',
+          description: 'TrackYoScore',
+          image: trackYoScore,
+          title: 'TrackYoScore',
+        },
+        {
           code: 'https://github.com/omegak911/omegak911.github.io/tree/portfolio',
           description: 'Personal Portfolio',
           image: portfolio,
@@ -40,12 +47,14 @@ class Applications extends Component {
             ['Heroku Website', 'https://personalportfolio-v2.herokuapp.com/'],
             ['Next.js Codebase', 'https://github.com/omegak911/portfolio-v2/tree/deployment']
           ]
-        }
-        // {
-        //   title: 'TrackYoScore',
-        //   image: trackYoScore,
-        //   description: 'Game score tracking system',
-        // },
+        },
+        {
+          code: 'https://github.com/omegak911/Gotta_Vue_em_All/tree/deployment',
+          description: 'View/Catch/Create Pokemon',
+          image: gottaVueEmAll,
+          title: 'Gotta Vue Em All',
+          url: 'https://gotta-vue-em-all.herokuapp.com/',
+        },
       ],
       showModal: null,
     }
@@ -79,7 +88,7 @@ class Applications extends Component {
                       <div className="modal">
                         <div className="modalInfo">
                           <div><h3>{app.title}</h3></div>
-                          <div><a href={app.url} target="_blank">Website</a></div>
+                          {app.url && <div><a href={app.url} target="_blank">Website</a></div>}
                           <div><a href={app.code} target="_blank">Codebase</a></div>
                           {app.special &&
                             <div>
