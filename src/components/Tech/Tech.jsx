@@ -19,6 +19,7 @@ class Tech extends Component {
           { tech: 'React Router', solid: [1,2,3,4,5], empty: [] },
           { tech: 'React Redux', solid: [1,2,3,4], empty: [5] },
           { tech: 'jQuery', solid: [1,2,3,4], empty: [5] },
+          { tech: 'Vue', solid: [1,2,3], empty: [4,5] },
           { tech: 'React Native', solid: [1,2], empty: [3,4,5] },
           // { tech: 'Next.js', solid: [1,2], empty: [3,4,5] },
           // { tech: 'create-react-app', solid: [1,2], empty: [3,4,5] }
