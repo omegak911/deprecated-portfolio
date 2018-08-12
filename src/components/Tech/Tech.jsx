@@ -20,6 +20,7 @@ class Tech extends Component {
           { tech: 'React Redux', solid: [1,2,3,4], empty: [5] },
           { tech: 'jQuery', solid: [1,2,3,4], empty: [5] },
           { tech: 'Vue', solid: [1,2,3], empty: [4,5] },
+          { tech: 'AngularJS', solid: [1,2,3], empty: [4,5] },
           { tech: 'React Native', solid: [1,2], empty: [3,4,5] },
           // { tech: 'Next.js', solid: [1,2], empty: [3,4,5] },
           // { tech: 'create-react-app', solid: [1,2], empty: [3,4,5] }
@@ -59,7 +60,7 @@ class Tech extends Component {
     const { Storage } = this.state;
     let delay = 0;
     
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < Storage.FrontEnd.length; i++) {
       setTimeout(() => this.setState({ FrontEnd: [...this.state.FrontEnd, Storage.FrontEnd[i]]}), delay);
       if (i < 8) {
         setTimeout(() => this.setState({ BackEnd: [...this.state.BackEnd, Storage.BackEnd[i]]}), delay);
