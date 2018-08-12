@@ -67,7 +67,7 @@ class Applications extends Component {
           image: unconventionalABCs,
           title: 'Unconventional ABCs',
           url: 'https://unconventional-abcs.herokuapp.com/',
-          techStack: 'AngularJS | HTML | CSS | Express',
+          techStack: 'AngularJS | Web Speech API | HTML | CSS | Express',
         }
       ],
       showModal: null,
